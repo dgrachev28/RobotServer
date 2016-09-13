@@ -21,6 +21,7 @@ public class MovementSocketHandler extends AbstractWebSocketHandler {
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) {
+        System.out.println(session.toString());
         users.add(session);
     }
 
@@ -40,6 +41,8 @@ public class MovementSocketHandler extends AbstractWebSocketHandler {
 
 
     public void sendMessageToUsers(String message) {
+        System.out.println(message);
+        System.out.println(users.size());
         for (WebSocketSession user : users) {
             try {
                 if (user.isOpen()) {

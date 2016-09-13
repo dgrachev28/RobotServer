@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 @EnableWebMvc
-@ComponentScan()
+@ComponentScan("com.robot.roboticsserver.web.controller")
 public class ServletConfig extends WebMvcConfigurerAdapter {
 
     @Override
