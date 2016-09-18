@@ -21,17 +21,16 @@ public class MovementSocketHandler extends AbstractWebSocketHandler {
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) {
-        System.out.println(session.toString());
+        LOGGER.info("Connection established: " + session.toString());
         users.add(session);
     }
 
 
     @Override
     public void handleTransportError(WebSocketSession session, Throwable e) {
-        LOGGER.info(e.getMessage(), e);
+        LOGGER.error(e.getMessage(), e);
         users.remove(session);
     }
-
 
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus closeStatus) {

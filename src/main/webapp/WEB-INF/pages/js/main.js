@@ -25,13 +25,17 @@ $(document).ready(function () {
 
     /* Handlers */
     function sendMessageToRobot() {
+        var data = {
+            type: "LEFT_ENGINE",
+            direction: "FORWARD",
+            speed: 3
+        };
+
         $.ajax({
-            method: 'GET',
-            url: '/sendCommandCode',
-            // accepts: "application/json; charset=utf-8",
-            data: {
-                commandCode: numberInput.val()
-            }
+            method: 'POST',
+            url: '/setEngineState',
+            contentType: "application/json",
+            data: JSON.stringify(data)
         });
     }
 
