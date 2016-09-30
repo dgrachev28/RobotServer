@@ -40,8 +40,7 @@ public class MovementSocketHandler extends AbstractWebSocketHandler {
 
 
     public void sendMessageToUsers(String message) {
-        System.out.println(message);
-        System.out.println(users.size());
+        LOGGER.info(message);
         for (WebSocketSession user : users) {
             try {
                 if (user.isOpen()) {
