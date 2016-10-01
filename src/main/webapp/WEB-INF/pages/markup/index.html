@@ -6,12 +6,26 @@
 
     <script src="../lib/jquery.js"></script>
     <script src="../js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
 </head>
 <body>
 
+    <div class="page">
+        <div class="camera-panel">
+            <div class="camera-panel__error">Sorry, camera is not available</div>
+        </div>
 
-    <input type="number" class="jsCommandCode" />
-    <button class="jsControlButton">OK</button>
+        <div class="movement-control-panel">
+            <div class="movement-control-panel__line">
+                <div class="movement-control-panel__key jsUpKeyMovementControl">▲</div>
+            </div>
+            <div class="movement-control-panel__line">
+                <div class="movement-control-panel__key jsLeftKeyMovementControl">◀</div>
+                <div class="movement-control-panel__key jsDownKeyMovementControl">▼</div>
+                <div class="movement-control-panel__key jsRightKeyMovementControl">▶</div>
+            </div>
+        </div>
+    </div>
 
 
 </body>
