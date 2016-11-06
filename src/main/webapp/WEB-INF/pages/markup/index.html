@@ -7,13 +7,24 @@
     <script src="../lib/jquery.js"></script>
     <script src="../js/main.js"></script>
     <link rel="stylesheet" type="text/css" href="../styles/main.css"/>
+
+    <!-- Video JS - RTMP Streaming-->
+    <link href="http://vjs.zencdn.net/5.11.8/video-js.css" rel="stylesheet">
+
+    <!-- If you'd like to support IE8 -->
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 </head>
 <body>
 
     <div class="page">
-        <div class="camera-panel">
-            <div class="camera-panel__error">Sorry, camera is not available</div>
-        </div>
+
+        <center>
+            <video id="livestream" class="video-js vjs-default-skin vjs-big-play-centered"
+                   controls autoplay preload="auto" width="1280" height="720"
+                   data-setup='{"example_option":true}'>
+                <source src="rtmp://192.168.1.154:1935/myapp/mystream" type="rtmp/mp4">
+            </video>
+        </center>
 
         <div class="movement-control-panel">
             <div class="movement-control-panel__line">
@@ -27,6 +38,6 @@
         </div>
     </div>
 
-
+    <script src="http://vjs.zencdn.net/5.11.8/video.js"></script>
 </body>
 </html>
